@@ -1,4 +1,5 @@
 // 文件路径: server.js (最终修复版)
+const cors = require('cors');
 
 const express = require('express');
 const helmet = require('helmet');
@@ -10,6 +11,7 @@ dotenv.config();
 connectDB();
 
 const app = express();
+app.use(cors());
 app.use(helmet());
 app.use(express.json());
 
